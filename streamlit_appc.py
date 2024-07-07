@@ -244,13 +244,13 @@ elif interaction_mode == "Audio":
             pattern = re.compile(r'[*#,]')
             text = pattern.sub('', stream_res)
 
-            if response:
-                sound_file = BytesIO()
-                tts = gTTS(stream_res, lang=lang)
-                tts.write_to_fp(sound_file)
-                play_audio(sound_file)
-            else:
-                st.warning('No text to convert to speech.')
+            # if response:
+            #     sound_file = BytesIO()
+            #     tts = gTTS(stream_res, lang=lang)
+            #     tts.write_to_fp(sound_file)
+            #     play_audio(sound_file)
+            # else:
+            #     st.warning('No text to convert to speech.')
+            text_to_speech(text, lang)
             end = time.time()
             st.write("TTS: " + str(end - start))
-            user_input = None
