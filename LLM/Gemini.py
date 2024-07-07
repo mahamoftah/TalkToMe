@@ -12,12 +12,10 @@ def configure_api(api_key, proxy_url=None):
     genai.configure(api_key=api_key)
 
 
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-os.environ['GOOGLE_API_KEY'] = st.secrets["GOOGLE_API_KEY"]
 
 
 class Gemini:
-    def __init__(self, model_path='gemini-1.5-flash', api_key='AIzaSyCEzc2NtaIa3eBMh5QNp1wDaeSCH0OrN-g',
+    def __init__(self, api_key, model_path='gemini-1.5-flash',
                  proxy_url=None):
         configure_api(api_key, proxy_url)
         self.model = genai.GenerativeModel(model_path)
@@ -25,7 +23,7 @@ class Gemini:
     def generate(self, question, lang):
         response = self.model.generate_content(question, stream=True)
         for res in response:
-            if hasattr(res, 'text') and res.text:
+            if res and hasattr(res, 'text') and res.text:
                 yield res.text
 
 

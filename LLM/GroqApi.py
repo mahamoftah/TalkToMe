@@ -2,11 +2,10 @@ import os
 from groq import Groq as groq
 import streamlit as st
 
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 
 class Groq:
-    def __init__(self, model_path="llama3-70b-8192", api_key_=GROQ_API_KEY, proxy_url=None):
+    def __init__(self, api_key_, model_path="llama3-70b-8192", proxy_url=None):
         self.client = groq(api_key=api_key_)
         self.model = model_path
 

@@ -20,6 +20,12 @@ logging.basicConfig(
     ]
 )
 
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+
+
 # Define model options
 modelOptions = {
     'Gemini': 'gemini-1.5-flash',
@@ -35,11 +41,11 @@ selected_model = st.sidebar.selectbox("Select a model", list(modelOptions.keys()
 selected_model_id = modelOptions[selected_model]
 
 if selected_model_id == 'gemini-1.5-flash':
-    chatModel = Gemini()
+    chatModel = Gemini(api_key = GOOGLE_API_KEY)
 else:
-    chatModel = Groq(model_path=selected_model_id)
+    chatModel = Groq(api_key_ = GROQ_API_KEY, model_path=selected_model_id)
 
-STTModel = GroqSTT()
+STTModel = GroqSTT(api_key_ = GROQ_API_KEY)
 Vectoriser = PDFVectoriser()
 
 languages = ['Arabic', 'English']
