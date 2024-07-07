@@ -222,7 +222,10 @@ elif interaction_mode == "Audio":
             st.write("Debug1")
 
             response = chatModel.generate(combined_input, lang, False)
+            st.write(response)
             st.session_state.messages.append({"role": "AI", "content": response})
+
+            st.write(response)
 
             pattern = re.compile(r'[*#,]')
             text = pattern.sub('', response)
