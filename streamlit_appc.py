@@ -253,3 +253,4 @@ elif interaction_mode == "Audio":
                 st.warning('No text to convert to speech.')
             end = time.time()
             st.write("TTS: " + str(end - start))
+            user_input = None
