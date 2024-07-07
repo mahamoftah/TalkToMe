@@ -1,7 +1,4 @@
 import streamlit as st
-import os
-from st_audiorec import st_audiorec
-from streamlit_TTS import text_to_speech, text_to_audio
 from io import BytesIO
 import base64
 from gtts import gTTS
@@ -33,7 +30,7 @@ else:
 STTModel = GroqSTT()
 Vectoriser = PDFVectoriser()
 
-languages = ['English', 'Arabic']
+languages = ['Arabic', 'English']
 language = st.sidebar.selectbox("Select a language", languages)
 lang = language[:2].lower()
 
@@ -118,23 +115,6 @@ if st.sidebar.button("Delete Vector Database"):
     st.session_state.texts = None
     st.success("Vector database deleted!")
 
-# Function to process audio input and generate response
-# def process_audio(audio_data):
-#     with open("recorded_audio.wav", "wb") as f:
-#         f.write(audio_data)
-
-#     # Transcribe audio using Whisper
-#     transcription = STTModel.transcribe_audio("recorded_audio.wav")
-#     st.session_state.messages.append({"role": "user", "content": transcription})
-
-#     # Generate response
-#     response = ""
-#     for res in STTModel.get_response(transcription):
-#         response += res
-
-#     st.session_state.messages.append({"role": "AI", "content": response})
-#     return response
-
 if interaction_mode == "Text":
     # Display chat history
     for msg in st.session_state.messages:
@@ -174,33 +154,10 @@ elif interaction_mode == "Audio":
 
     st.title("Voice Interaction")
     # Recording audio
-    # st.subheader("Record Your Message:")
-    # wav_audio_data = st_audiorec()
+    st.subheader("Record Your Message:")
+
     user_input = STTModel.speech_to_text_streamlit(lang)
-
     if user_input is not None:
-        # with open("recorded_audio.wav", "wb") as f:
-        #     f.write(wav_audio_data)
-
-        # # Get the URL for the audio data
-        # audio_url = st.audio(wav_audio_data, format="audio/wav")
-
-        # # Use custom HTML and JavaScript to autoplay the audio and make it invisible
-        # st.markdown(f"""
-        # <audio id="audio" autoplay>
-        #     <source src="{audio_url}" type="audio/wav">
-        # </audio>
-        # <script>
-        #     var audio = document.getElementById('audio');
-        #     audio.style.display = 'none';
-        #     audio.play();
-        # </script>
-        # """, unsafe_allow_html=True)
-
-        # Transcribe audio using Whisper
-        # transcription = STTModel.transcribe_audio("recorded_audio.wav", lang)
-        # print(transcription)
-        # user_input = STTModel.speech_to_text_streamlit(lang)
 
         st.session_state.messages.append({"role": "user", "content": user_input})
         similar_text = "You are a Multi Task AI Agent"

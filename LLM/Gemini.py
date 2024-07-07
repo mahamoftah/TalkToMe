@@ -22,15 +22,11 @@ class Gemini:
         configure_api(api_key, proxy_url)
         self.model = genai.GenerativeModel(model_path)
 
-    def generate(self, question, lang, stream=True):
-        response = self.model.generate_content(question, stream=stream)
-
-        if stream:
-            for res in response:
-                if hasattr(res, 'text') and res.text:
-                    yield res.text
-        else:
-            return response.text
+    def generate(self, question, lang):
+        response = self.model.generate_content(question, stream=True)
+        for res in response:
+            if hasattr(res, 'text') and res.text:
+                yield res.text
 
 
 def test():
