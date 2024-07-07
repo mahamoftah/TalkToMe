@@ -9,6 +9,7 @@ google-generativeai
 google-api-python-client
 faiss-cpu
 streamlit-audiorec
+ffmpeg
 streamlit-TTS
 python-dotenv
 openai
