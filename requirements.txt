@@ -10,6 +10,7 @@ google-api-python-client
 faiss-cpu
 streamlit-audiorec
 ffmpeg
+ffprobe
 streamlit-TTS
 python-dotenv
 openai
