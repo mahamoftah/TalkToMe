@@ -30,7 +30,7 @@ class Gemini:
                 if hasattr(res, 'text') and res.text:
                     yield res.text
         else:
-            return response
+            return response.text
 
 
 def test():
