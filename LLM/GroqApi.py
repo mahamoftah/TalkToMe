@@ -10,7 +10,7 @@ class Groq:
         self.client = groq(api_key=api_key_)
         self.model = model_path
 
-    def generate(self, question, lang, stream):
+    def generate(self, question, lang, stream=True):
 
         if (self.model == "mixtral-8x7b-32768" or self.model == "llama3-70b-8192" or self.model == "llama3-8b-8192") and lang == "ar":
             context = "you are a helpful assistant, Please Answer in Arabic."

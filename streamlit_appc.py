@@ -174,14 +174,20 @@ if interaction_mode == "Text":
 elif interaction_mode == "Audio":
 
     st.title("Voice Interaction")
-
+    import time
+    start = time.time()
     # Recording audio
-    st.subheader("Record Your Message:")
-    wav_audio_data = st_audiorec()
+    # st.subheader("Record Your Message:")
+    # wav_audio_data = st_audiorec()
+    user_input = STTModel.speech_to_text_streamlit(lang)
 
-    if wav_audio_data is not None:
-        with open("recorded_audio.wav", "wb") as f:
-            f.write(wav_audio_data)
+    if user_input is not None:
+        # with open("recorded_audio.wav", "wb") as f:
+        #     f.write(wav_audio_data)
+
+        end = time.time()
+
+        st.write("STT: " + str(end - start))
 
         # # Get the URL for the audio data
         # audio_url = st.audio(wav_audio_data, format="audio/wav")
@@ -197,11 +203,15 @@ elif interaction_mode == "Audio":
         #     audio.play();
         # </script>
         # """, unsafe_allow_html=True)
-
+        start = time.time()
         # Transcribe audio using Whisper
-        transcription = STTModel.transcribe_audio("recorded_audio.wav", lang)
+        # transcription = STTModel.transcribe_audio("recorded_audio.wav", lang)
         # print(transcription)
-        user_input = transcription
+        # user_input = STTModel.speech_to_text_streamlit(lang)
+
+        end = time.time()
+
+        st.write("STT: " + str(end - start))
 
         st.session_state.messages.append({"role": "user", "content": user_input})
         # st.chat_message("user").write(user_input)
@@ -214,28 +224,32 @@ elif interaction_mode == "Audio":
                 similar_text += doc.page_content
 
         with (st.spinner("Thinking...")):
+            import time
+
+            start = time.time()
             stream_res = ""
             conversation_history = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.messages])
             combined_input = f"{conversation_history}\nuser: {user_input}\nAI:"
             combined_input += similar_text
 
-            st.write("Debug1")
+            for response in chatModel.generate(combined_input, lang):
+                if response is None:
+                    break
+                stream_res += response
+            end = time.time()
+            st.write("T2T: " + str(end - start))
+            st.session_state.messages.append({"role": "AI", "content": stream_res})
 
-            response = chatModel.generate(combined_input, lang, False)
-            st.write(response)
-            st.session_state.messages.append({"role": "AI", "content": response})
-
-            st.write(response)
-
+            start = time.time()
             pattern = re.compile(r'[*#,]')
-            text = pattern.sub('', response)
+            text = pattern.sub('', stream_res)
 
-            st.write("Debug2")
-
-            if stream_res:
+            if response:
                 sound_file = BytesIO()
-                tts = gTTS(text, lang=lang)
+                tts = gTTS(stream_res, lang=lang)
                 tts.write_to_fp(sound_file)
                 play_audio(sound_file)
             else:
                 st.warning('No text to convert to speech.')
+            end = time.time()
+            st.write("TTS: " + str(end - start))

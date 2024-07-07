@@ -1,5 +1,6 @@
 import os
 from groq import Groq as groq
+from streamlit_mic_recorder import speech_to_text
 
 GROQ_API_KEY = "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"
 
@@ -21,3 +22,18 @@ class GroqSTT:
                 temperature=0.0
             )
         return transcription.text
+
+    def speech_to_text_streamlit(self, lang):
+        text = speech_to_text(
+            language=lang,
+            start_prompt='🔇',
+            stop_prompt="🔈",
+            just_once=False,
+            use_container_width=False,
+            callback=None,
+            args=(),
+            kwargs={},
+            key=None
+        )
+
+        return text
