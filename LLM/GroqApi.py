@@ -10,7 +10,7 @@ class Groq:
         self.client = groq(api_key=api_key_)
         self.model = model_path
 
-    def generate(self, question, lang):
+    def generate(self, question, lang, stream):
 
         if (self.model == "mixtral-8x7b-32768" or self.model == "llama3-70b-8192" or self.model == "llama3-8b-8192") and lang == "ar":
             context = "you are a helpful assistant, Please Answer in Arabic."
@@ -31,11 +31,14 @@ class Groq:
             model=self.model,
             temperature=0.5,
             max_tokens=1024,
-            stream=True,
+            stream=stream,
         )
-        for res in response:
-            yield res.choices[0].delta.content
-        # print(f"{'*'*20}")   
+
+        if stream:
+            for res in response:
+                yield res.choices[0].delta.content
+        else:
+            return response.choices[0].delta.content
 
 
 def test():

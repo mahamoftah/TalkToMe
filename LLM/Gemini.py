@@ -29,8 +29,9 @@ class Gemini:
             for res in response:
                 if hasattr(res, 'text') and res.text:
                     yield res.text
-       else:
+        else:
             return response
+
 
 def test():
     llm = Gemini()

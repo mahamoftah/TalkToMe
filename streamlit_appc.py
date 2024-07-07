@@ -219,20 +219,17 @@ elif interaction_mode == "Audio":
             combined_input = f"{conversation_history}\nuser: {user_input}\nAI:"
             combined_input += similar_text
 
-            for response in chatModel.generate(combined_input, lang):
-                if response is None:
-                    break
-                stream_res += response
-                # placeholder.markdown(stream_res)
-            st.session_state.messages.append({"role": "AI", "content": stream_res})
+            st.write("Debug1")
+
+            response = chatModel.generate(combined_input, lang, False)
+            st.session_state.messages.append({"role": "AI", "content": response})
 
             pattern = re.compile(r'[*#,]')
-            text = pattern.sub('', stream_res)
+            text = pattern.sub('', response)
 
-            st.write("Debug")
+            st.write("Debug2")
 
             if stream_res:
-                # Convert text to speech
                 sound_file = BytesIO()
                 tts = gTTS(text, lang=lang)
                 tts.write_to_fp(sound_file)
