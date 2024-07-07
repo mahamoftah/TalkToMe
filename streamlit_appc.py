@@ -7,6 +7,18 @@ from LLM.Gemini import *
 from LLM.GroqApi import *
 import re
 from STT.GroqApiSTT import *
+import logging
+
+# Set up basic configuration for logging
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the logging level
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  # Specify the format of log messages
+    datefmt='%Y-%m-%d %H:%M:%S',  # Specify the format of the date in log messages
+    handlers=[
+        logging.FileHandler('app.log'),  # Log messages will be saved to a file named 'app.log'
+        logging.StreamHandler()  # Log messages will also be output to the console
+    ]
+)
 
 # Define model options
 modelOptions = {
@@ -49,6 +61,8 @@ def play_audio(audio_buffer):
     </script>
     """
     st.markdown(audio_html, unsafe_allow_html=True)
+    logging.debug("playing response audio")
+
 
 
 # HTML and CSS for styled title
@@ -166,7 +180,8 @@ elif interaction_mode == "Audio":
             similar_context = Vectoriser.get_similar_context(user_input, 5, st.session_state.v_db)
             for doc in similar_context:
                 similar_text += doc.page_content
-
+                
+        logging.debug("Thinking...................")
         with (st.spinner("Thinking...")):
 
             stream_res = ""
@@ -188,8 +203,8 @@ elif interaction_mode == "Audio":
                 sound_file = BytesIO()
                 tts = gTTS(text, lang=lang)
                 tts.write_to_fp(sound_file)
-                st.audio(sound_file)
-                # play_audio(sound_file)
+                # st.audio(sound_file)
+                play_audio(sound_file)
             else:
                 st.warning('No text to convert to speech.')
 
