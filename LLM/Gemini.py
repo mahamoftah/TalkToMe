@@ -12,12 +12,12 @@ def configure_api(api_key, proxy_url=None):
     genai.configure(api_key=api_key)
 
 
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-os.environ['GOOGLE_API_KEY'] = st.secrets["GOOGLE_API_KEY"]
+# genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 
 class Gemini:
-    def __init__(self, model_path='gemini-1.5-flash', api_key='AIzaSyCEzc2NtaIa3eBMh5QNp1wDaeSCH0OrN-g',
+    def __init__(self, model_path='gemini-1.5-flash', api_key=GOOGLE_API_KEY,
                  proxy_url=None):
         configure_api(api_key, proxy_url)
         self.model = genai.GenerativeModel(model_path)
