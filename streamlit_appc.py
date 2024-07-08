@@ -8,19 +8,19 @@ from LLM.GroqApi import *
 import re
 from STT.GroqApiSTT import *
 import logging
-import pygame
+from pygame import mixer
 
 
 # Set up basic configuration for logging
-logging.basicConfig(
-    level=logging.DEBUG,  # Set the logging level
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  # Specify the format of log messages
-    datefmt='%Y-%m-%d %H:%M:%S',  # Specify the format of the date in log messages
-    handlers=[
-        logging.FileHandler('app.log'),  # Log messages will be saved to a file named 'app.log'
-        logging.StreamHandler()  # Log messages will also be output to the console
-    ]
-)
+# logging.basicConfig(
+#     level=logging.DEBUG,  # Set the logging level
+#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',  # Specify the format of log messages
+#     datefmt='%Y-%m-%d %H:%M:%S',  # Specify the format of the date in log messages
+#     handlers=[
+#         logging.FileHandler('app.log'),  # Log messages will be saved to a file named 'app.log'
+#         logging.StreamHandler()  # Log messages will also be output to the console
+#     ]
+# )
 
 # Define model options
 modelOptions = {
@@ -208,15 +208,11 @@ elif interaction_mode == "Audio":
                 tts.write_to_fp(sound_file)
                 # st.audio(sound_file)
                 # play_audio(sound_file)
-                # mixer.init()
-                # sound_file.seek(0)
-                # mixer.music.load(sound_file, "mp3")
-                # mixer.music.play()
-                pygame.init()
-                pygame.mixer.init()
+                mixer.init()
                 sound_file.seek(0)
-                pygame.mixer.music.load(sound_file)
-                pygame.mixer.music.play()
+                mixer.music.load(sound_file, "mp3")
+                mixer.music.play()
+
             else:
                 st.warning('No text to convert to speech.')
             # text_to_speech(text, lang)
