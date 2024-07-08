@@ -8,6 +8,8 @@ from LLM.GroqApi import *
 import re
 from STT.GroqApiSTT import *
 import logging
+from pygame import mixer
+
 
 # Set up basic configuration for logging
 logging.basicConfig(
@@ -160,6 +162,7 @@ if interaction_mode == "Text":
             for response in chatModel.generate(combined_input, lang):
                 if response is None:
                     break
+
                 stream_res += response
                 placeholder.markdown(stream_res)
             st.session_state.messages.append({"role": "AI", "content": stream_res})
@@ -204,8 +207,11 @@ elif interaction_mode == "Audio":
                 tts = gTTS(text, lang=lang)
                 tts.write_to_fp(sound_file)
                 # st.audio(sound_file)
-                play_audio(sound_file)
+                # play_audio(sound_file)
+                mixer.init()
+                sound_file.seek(0)
+                mixer.music.load(sound_file, "mp3")
+                mixer.music.play()
             else:
                 st.warning('No text to convert to speech.')
-
             # text_to_speech(text, lang)
