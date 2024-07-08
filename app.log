@@ -1934,3 +1934,57 @@ Do you have any other questions about fine-tuning RAG or other large language mo
 2024-07-08 16:54:13 - gtts.tts - DEBUG - status-0: 200
 2024-07-08 16:54:13 - gtts.tts - DEBUG - part-0 written to <_io.BytesIO object at 0x000002889D031CB0>
 2024-07-08 16:54:13 - gtts.tts - DEBUG - part-0 created
+2024-07-08 17:13:17 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:13:17 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:13:21 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:13:21 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:13:28 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:13:28 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:13:31 - root - DEBUG - Thinking...................
+2024-07-08 17:13:34 - gtts.tts - DEBUG - tld: com
+2024-07-08 17:13:34 - gtts.tts - DEBUG - lang: ar
+2024-07-08 17:13:34 - gtts.tts - DEBUG - slow: False
+2024-07-08 17:13:34 - gtts.tts - DEBUG - lang_check: True
+2024-07-08 17:13:34 - gtts.tts - DEBUG - pre_processor_funcs: [<function tone_marks at 0x000001FACA15D3A0>, <function end_of_line at 0x000001FACA15E160>, <function abbreviations at 0x000001FACA15E0C0>, <function word_sub at 0x000001FACA15E2A0>]
+2024-07-08 17:13:34 - gtts.tts - DEBUG - timeout: None
+2024-07-08 17:13:34 - gtts.lang - DEBUG - langs: {'af': 'Afrikaans', 'ar': 'Arabic', 'bg': 'Bulgarian', 'bn': 'Bengali', 'bs': 'Bosnian', 'ca': 'Catalan', 'cs': 'Czech', 'da': 'Danish', 'de': 'German', 'el': 'Greek', 'en': 'English', 'es': 'Spanish', 'et': 'Estonian', 'fi': 'Finnish', 'fr': 'French', 'gu': 'Gujarati', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'is': 'Icelandic', 'it': 'Italian', 'iw': 'Hebrew', 'ja': 'Japanese', 'jw': 'Javanese', 'km': 'Khmer', 'kn': 'Kannada', 'ko': 'Korean', 'la': 'Latin', 'lv': 'Latvian', 'ml': 'Malayalam', 'mr': 'Marathi', 'ms': 'Malay', 'my': 'Myanmar (Burmese)', 'ne': 'Nepali', 'nl': 'Dutch', 'no': 'Norwegian', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'si': 'Sinhala', 'sk': 'Slovak', 'sq': 'Albanian', 'sr': 'Serbian', 'su': 'Sundanese', 'sv': 'Swedish', 'sw': 'Swahili', 'ta': 'Tamil', 'te': 'Telugu', 'th': 'Thai', 'tl': 'Filipino', 'tr': 'Turkish', 'uk': 'Ukrainian', 'ur': 'Urdu', 'vi': 'Vietnamese', 'zh-CN': 'Chinese (Simplified)', 'zh-TW': 'Chinese (Mandarin/Taiwan)', 'zh': 'Chinese (Mandarin)'}
+2024-07-08 17:13:34 - gtts.tts - DEBUG - pre-processing: <function tone_marks at 0x000001FACA15D3A0>
+2024-07-08 17:13:34 - gtts.tts - DEBUG - pre-processing: <function end_of_line at 0x000001FACA15E160>
+2024-07-08 17:13:34 - gtts.tts - DEBUG - pre-processing: <function abbreviations at 0x000001FACA15E0C0>
+2024-07-08 17:13:34 - gtts.tts - DEBUG - pre-processing: <function word_sub at 0x000001FACA15E2A0>
+2024-07-08 17:13:34 - gtts.tts - DEBUG - text_parts: 1
+2024-07-08 17:13:34 - gtts.tts - DEBUG - data-0: f.req=%5B%5B%5B%22jQ1olc%22%2C%22%5B%5C%22%5C%5Cu062a%5C%5Cu0645%20%5C%5Cu0628%5C%5Cu0646%5C%5Cu0627%5C%5Cu0621%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0633%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0639%5C%5Cu0627%5C%5Cu0644%5C%5Cu064a%20%5C%5Cu0641%5C%5Cu064a%20%5C%5Cu0639%5C%5Cu0647%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0631%5C%5Cu0626%5C%5Cu064a%5C%5Cu0633%20%5C%5Cu062c%5C%5Cu0645%5C%5Cu0627%5C%5Cu0644%20%5C%5Cu0639%5C%5Cu0628%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0646%5C%5Cu0627%5C%5Cu0635%5C%5Cu0631%20%5C%5Cu0641%5C%5Cu064a%20%5C%5Cu0645%5C%5Cu0635%5C%5Cu0631.%5C%22%2C%5C%22ar%5C%22%2Cnull%2C%5C%22null%5C%22%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&
+2024-07-08 17:13:34 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2024-07-08 17:13:34 - urllib3.connectionpool - DEBUG - https://translate.google.com:443 "POST /_/TranslateWebserverUi/data/batchexecute HTTP/1.1" 200 None
+2024-07-08 17:13:34 - gtts.tts - DEBUG - headers-0: {'Referer': 'http://translate.google.com/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'Content-Length': '659'}
+2024-07-08 17:13:34 - gtts.tts - DEBUG - url-0: https://translate.google.com/_/TranslateWebserverUi/data/batchexecute
+2024-07-08 17:13:34 - gtts.tts - DEBUG - status-0: 200
+2024-07-08 17:13:34 - gtts.tts - DEBUG - part-0 written to <_io.BytesIO object at 0x000001FAC8C70220>
+2024-07-08 17:13:34 - gtts.tts - DEBUG - part-0 created
+2024-07-08 17:14:07 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:14:07 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:14:10 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:14:10 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:14:17 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-07-08 17:14:17 - httpx - DEBUG - load_verify_locations cafile='C:\\Users\\maham\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem'
+2024-07-08 17:14:19 - root - DEBUG - Thinking...................
+2024-07-08 17:14:23 - gtts.tts - DEBUG - tld: com
+2024-07-08 17:14:23 - gtts.tts - DEBUG - lang: ar
+2024-07-08 17:14:23 - gtts.tts - DEBUG - slow: False
+2024-07-08 17:14:23 - gtts.tts - DEBUG - lang_check: True
+2024-07-08 17:14:23 - gtts.tts - DEBUG - pre_processor_funcs: [<function tone_marks at 0x000001FACA15D3A0>, <function end_of_line at 0x000001FACA15E160>, <function abbreviations at 0x000001FACA15E0C0>, <function word_sub at 0x000001FACA15E2A0>]
+2024-07-08 17:14:23 - gtts.tts - DEBUG - timeout: None
+2024-07-08 17:14:23 - gtts.lang - DEBUG - langs: {'af': 'Afrikaans', 'ar': 'Arabic', 'bg': 'Bulgarian', 'bn': 'Bengali', 'bs': 'Bosnian', 'ca': 'Catalan', 'cs': 'Czech', 'da': 'Danish', 'de': 'German', 'el': 'Greek', 'en': 'English', 'es': 'Spanish', 'et': 'Estonian', 'fi': 'Finnish', 'fr': 'French', 'gu': 'Gujarati', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'is': 'Icelandic', 'it': 'Italian', 'iw': 'Hebrew', 'ja': 'Japanese', 'jw': 'Javanese', 'km': 'Khmer', 'kn': 'Kannada', 'ko': 'Korean', 'la': 'Latin', 'lv': 'Latvian', 'ml': 'Malayalam', 'mr': 'Marathi', 'ms': 'Malay', 'my': 'Myanmar (Burmese)', 'ne': 'Nepali', 'nl': 'Dutch', 'no': 'Norwegian', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'si': 'Sinhala', 'sk': 'Slovak', 'sq': 'Albanian', 'sr': 'Serbian', 'su': 'Sundanese', 'sv': 'Swedish', 'sw': 'Swahili', 'ta': 'Tamil', 'te': 'Telugu', 'th': 'Thai', 'tl': 'Filipino', 'tr': 'Turkish', 'uk': 'Ukrainian', 'ur': 'Urdu', 'vi': 'Vietnamese', 'zh-CN': 'Chinese (Simplified)', 'zh-TW': 'Chinese (Mandarin/Taiwan)', 'zh': 'Chinese (Mandarin)'}
+2024-07-08 17:14:23 - gtts.tts - DEBUG - pre-processing: <function tone_marks at 0x000001FACA15D3A0>
+2024-07-08 17:14:23 - gtts.tts - DEBUG - pre-processing: <function end_of_line at 0x000001FACA15E160>
+2024-07-08 17:14:23 - gtts.tts - DEBUG - pre-processing: <function abbreviations at 0x000001FACA15E0C0>
+2024-07-08 17:14:23 - gtts.tts - DEBUG - pre-processing: <function word_sub at 0x000001FACA15E2A0>
+2024-07-08 17:14:23 - gtts.tts - DEBUG - text_parts: 1
+2024-07-08 17:14:23 - gtts.tts - DEBUG - data-0: f.req=%5B%5B%5B%22jQ1olc%22%2C%22%5B%5C%22%5C%5Cu062a%5C%5Cu0645%20%5C%5Cu0628%5C%5Cu0646%5C%5Cu0627%5C%5Cu0621%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0633%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0639%5C%5Cu0627%5C%5Cu0644%5C%5Cu064a%20%5C%5Cu0641%5C%5Cu064a%20%5C%5Cu0639%5C%5Cu0647%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0631%5C%5Cu0626%5C%5Cu064a%5C%5Cu0633%20%5C%5Cu062c%5C%5Cu0645%5C%5Cu0627%5C%5Cu0644%20%5C%5Cu0639%5C%5Cu0628%5C%5Cu062f%20%5C%5Cu0627%5C%5Cu0644%5C%5Cu0646%5C%5Cu0627%5C%5Cu0635%5C%5Cu0631%20%5C%5Cu0641%5C%5Cu064a%20%5C%5Cu0645%5C%5Cu0635%5C%5Cu0631.%5C%22%2C%5C%22ar%5C%22%2Cnull%2C%5C%22null%5C%22%5D%22%2Cnull%2C%22generic%22%5D%5D%5D&
+2024-07-08 17:14:23 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2024-07-08 17:14:23 - urllib3.connectionpool - DEBUG - https://translate.google.com:443 "POST /_/TranslateWebserverUi/data/batchexecute HTTP/1.1" 200 None
+2024-07-08 17:14:23 - gtts.tts - DEBUG - headers-0: {'Referer': 'http://translate.google.com/', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', 'Content-Length': '659'}
+2024-07-08 17:14:23 - gtts.tts - DEBUG - url-0: https://translate.google.com/_/TranslateWebserverUi/data/batchexecute
+2024-07-08 17:14:23 - gtts.tts - DEBUG - status-0: 200
+2024-07-08 17:14:23 - gtts.tts - DEBUG - part-0 written to <_io.BytesIO object at 0x000001FAEE283920>
+2024-07-08 17:14:23 - gtts.tts - DEBUG - part-0 created

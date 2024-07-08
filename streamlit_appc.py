@@ -8,7 +8,7 @@ from LLM.GroqApi import *
 import re
 from STT.GroqApiSTT import *
 import logging
-from pygame import mixer
+import pygame
 
 
 # Set up basic configuration for logging
@@ -208,10 +208,15 @@ elif interaction_mode == "Audio":
                 tts.write_to_fp(sound_file)
                 # st.audio(sound_file)
                 # play_audio(sound_file)
-                mixer.init()
+                # mixer.init()
+                # sound_file.seek(0)
+                # mixer.music.load(sound_file, "mp3")
+                # mixer.music.play()
+                pygame.init()
+                pygame.mixer.init()
                 sound_file.seek(0)
-                mixer.music.load(sound_file, "mp3")
-                mixer.music.play()
+                pygame.mixer.music.load(sound_file)
+                pygame.mixer.music.play()
             else:
                 st.warning('No text to convert to speech.')
             # text_to_speech(text, lang)
