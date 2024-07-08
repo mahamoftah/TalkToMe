@@ -16,3 +16,4 @@ gtts
 streamlit_mic_recorder
 pygame
 alsa-utils
+alsa-lib-devel
