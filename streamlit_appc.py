@@ -10,7 +10,7 @@ from STT.GroqApiSTT import *
 import logging
 from pygame import mixer
 
-os.environ['SDL_AUDIODRIVER'] = 'dsp'
+os.environ['SDL_AUDIODRIVER'] = 'alsa'
 
 
 # Set up basic configuration for logging
