@@ -15,4 +15,3 @@ openai
 gtts
 streamlit_mic_recorder
 pygame
-libasound2
