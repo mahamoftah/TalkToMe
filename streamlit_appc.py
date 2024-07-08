@@ -10,8 +10,6 @@ from STT.GroqApiSTT import *
 import logging
 import pygame
 
-os.environ['SDL_AUDIODRIVER'] = 'dummy'
-
 
 # Set up basic configuration for logging
 logging.basicConfig(
