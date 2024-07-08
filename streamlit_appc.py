@@ -10,7 +10,7 @@ from STT.GroqApiSTT import *
 import logging
 import pygame
 
-os.environ['SDL_AUDIODRIVER'] = 'pulseaudio'
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
 
 
 # Set up basic configuration for logging
