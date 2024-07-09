@@ -8,7 +8,7 @@ from LLM.GroqApi import *
 import re
 from STT.GroqApiSTT import *
 import logging
-from pygame import mixer
+# from pygame import mixer
 
 
 # Set up basic configuration for logging
