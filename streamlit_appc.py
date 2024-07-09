@@ -10,6 +10,7 @@ from STT.GroqApiSTT import *
 import logging
 from pygame import mixer
 
+
 # Set up basic configuration for logging
 # logging.basicConfig(
 #     level=logging.DEBUG,  # Set the logging level

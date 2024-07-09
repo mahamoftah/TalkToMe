@@ -1,3 +1,4 @@
+pip==24.1.1
 streamlit
 streamlit-webrtc
 groq
@@ -15,3 +16,6 @@ openai
 gtts
 streamlit_mic_recorder
 pygame
+libasound2
+alsa-utils
+alsa-lib-devel
