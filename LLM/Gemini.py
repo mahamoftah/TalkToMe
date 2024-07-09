@@ -12,7 +12,7 @@ def configure_api(api_key, proxy_url=None):
     genai.configure(api_key=api_key)
 
 
-# genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 

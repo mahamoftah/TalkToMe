@@ -10,9 +10,6 @@ from STT.GroqApiSTT import *
 import logging
 from pygame import mixer
 
-os.environ['SDL_AUDIODRIVER'] = 'dsp'
-
-
 # Set up basic configuration for logging
 # logging.basicConfig(
 #     level=logging.DEBUG,  # Set the logging level
@@ -66,7 +63,6 @@ def play_audio(audio_buffer):
     """
     st.markdown(audio_html, unsafe_allow_html=True)
     logging.debug("playing response audio")
-
 
 
 # HTML and CSS for styled title
@@ -185,7 +181,7 @@ elif interaction_mode == "Audio":
             similar_context = Vectoriser.get_similar_context(user_input, 5, st.session_state.v_db)
             for doc in similar_context:
                 similar_text += doc.page_content
-                
+
         logging.debug("Thinking...................")
         with (st.spinner("Thinking...")):
 
@@ -208,12 +204,12 @@ elif interaction_mode == "Audio":
                 sound_file = BytesIO()
                 tts = gTTS(text, lang=lang)
                 tts.write_to_fp(sound_file)
-                # st.audio(sound_file)
                 # play_audio(sound_file)
-                mixer.init()
-                sound_file.seek(0)
-                mixer.music.load(sound_file, "mp3")
-                mixer.music.play()
+                # mixer.init()
+                # sound_file.seek(0)
+                # mixer.music.load(sound_file, "mp3")
+                # mixer.music.play()
+                st.audio(sound_file, format="audio/wav", autoplay=True)
 
             else:
                 st.warning('No text to convert to speech.')
