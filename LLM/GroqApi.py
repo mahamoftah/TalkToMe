@@ -12,7 +12,7 @@ class Groq:
 
     def generate(self, question, lang):
 
-        if (self.model == "mixtral-8x7b-32768" or self.model == "llama3-70b-8192" or self.model == "llama3-8b-8192") and lang == "ar":
+        if lang == "ar":
             context = "you are a helpful assistant, Please Answer in Arabic."
         else:
             context = "you are a helpful assistant."
